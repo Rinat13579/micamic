@@ -1,12 +1,10 @@
 package micamic.mica.mic;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-
 import java.util.concurrent.TimeUnit;
-
 import static org.testng.Assert.fail;
 
 public class TestBase {
@@ -16,10 +14,11 @@ public class TestBase {
 
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
-      driver = new FirefoxDriver();
-      driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+      driver = new ChromeDriver();
+      driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+      driver.manage().window().maximize();
       driver.get("https://micamic.ru/");
-      driver.findElement(By.linkText("Sign in")).click();
+      driver.findElement(By.linkText("Войти")).click();
       driver.findElement(By.id("id_username")).click();
       driver.findElement(By.id("id_username")).clear();
       driver.findElement(By.id("id_username")).sendKeys("Dark_Elf");
