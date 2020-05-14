@@ -15,16 +15,16 @@ public class TestBase {
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
       driver = new ChromeDriver();
-      driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+      driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
       driver.manage().window().maximize();
       driver.get("https://micamic.ru/");
       driver.findElement(By.linkText("Войти")).click();
       driver.findElement(By.id("id_username")).click();
       driver.findElement(By.id("id_username")).clear();
-      driver.findElement(By.id("id_username")).sendKeys("Dark_Elf");
+      driver.findElement(By.id("id_username")).sendKeys("a");
       driver.findElement(By.id("id_password")).click();
       driver.findElement(By.id("id_password")).clear();
-      driver.findElement(By.id("id_password")).sendKeys("Aigulechka1");
+      driver.findElement(By.id("id_password")).sendKeys("fghvbnrty");
       driver.findElement(By.xpath("(//button[@type='submit'])[3]")).click();
     }
 
