@@ -3,19 +3,22 @@ package micamic.mica.mic.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class NavigationHelper {
-    private WebDriver driver;
+public class NavigationHelper extends HelperBase {
 
     public NavigationHelper(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public void gotoHomePage() {
-      driver.findElement(By.linkText("Домашняя")).click();
+        click(By.linkText("Домашняя"));
     }
 
-    public void gotoPostsPage() throws InterruptedException {
-      Thread.sleep(250);
-      driver.findElement(By.linkText("Заметки")).click();
+    public void gotoPostsPage() {
+        click(By.linkText("Заметки"));
+    }
+
+    public void gotoMyPostPage() {
+        click(By.id("user-dropdown"));
+        click(By.linkText("Мои заметки"));
     }
 }
