@@ -22,6 +22,7 @@ public class HelperBase {
 
     protected void fillFrame(String nameOrId, By locator, String text) {
         driver.switchTo().frame(nameOrId);
+        driver.findElement(locator).clear();
         driver.findElement(locator).sendKeys(text);
         driver.switchTo().defaultContent();
     }
