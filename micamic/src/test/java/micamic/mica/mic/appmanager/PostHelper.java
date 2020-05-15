@@ -29,6 +29,11 @@ public class PostHelper extends HelperBase {
     }
 
     public void deletePost() {
-        driver.findElement(By.linkText("Удалить")).click();
+        click(By.xpath("//div[2]/div/button"));
+        click(By.linkText("Удалить"));
+    }
+
+    public void initModification() {
+        click(By.linkText("Редактировать"));
     }
 }

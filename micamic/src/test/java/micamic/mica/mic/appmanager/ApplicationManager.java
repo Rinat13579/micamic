@@ -15,7 +15,6 @@ public class ApplicationManager {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get("https://micamic.ru/");
-        driver.findElement(By.linkText("Войти")).click();
         sessionHelper = new SessionHelper(driver);
         postHelper = new PostHelper(driver);
         navigationHelper = new NavigationHelper(driver);
