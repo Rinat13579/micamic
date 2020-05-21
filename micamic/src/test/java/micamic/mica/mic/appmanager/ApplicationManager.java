@@ -28,7 +28,7 @@ public class ApplicationManager {
         } else if (browser.equals(BrowserType.EDGE)) {
             driver = new EdgeDriver();
         }
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get("https://micamic.ru/");
         sessionHelper = new SessionHelper(driver);
