@@ -14,6 +14,11 @@ public class NavigationHelper extends HelperBase {
     }
 
     public void gotoPostsPage() {
+        if (isElementPresent(By.tagName("h1"))
+                && driver.findElement(By.tagName("h1")).getText().equals("Заметки")
+                && driver.findElement(By.tagName("h3")).getText().equals("Фильтр")) {
+            return;
+        }
         click(By.linkText("Заметки"));
     }
 
