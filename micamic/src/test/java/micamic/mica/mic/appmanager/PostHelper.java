@@ -41,4 +41,9 @@ public class PostHelper extends HelperBase {
     public void changePublish() {
         click(By.xpath("//div[@id='div_id_is_published']/label"));
     }
+
+    public void commentPost() {
+        type(By.id("id_content"), "First autotest comment");
+        click(By.xpath("//*[@id=\"comments\"]/div[1]/form/div/div[2]/button"));
+    }
 }
