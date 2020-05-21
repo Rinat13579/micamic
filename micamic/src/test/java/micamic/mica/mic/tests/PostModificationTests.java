@@ -12,7 +12,9 @@ public class PostModificationTests extends TestBase{
             app.getPostHelper().createPost(new PostData("Autotest", "Body for autotest"));
         }
         app.getPostHelper().openPost();
-        app.getPostHelper().createPost(new PostData("Autotests changes", "Body of the Post will be change automatically"));
+        app.getPostHelper().initModification();
+        app.getPostHelper().fillPostForm(new PostData("Autotests changes", "Body of the Post will be change automatically"));
+        app.getPostHelper().submitPostCreation();
         app.getNavigationHelper().gotoPostsPage();
         app.getNavigationHelper().gotoHomePage();
     }
