@@ -7,10 +7,7 @@ public class PostCreationTests extends TestBase {
 
   @Test
   public void testPostCreation() throws Exception {
-    app.getPostHelper().initPostCreation();
-    app.getPostHelper().fillPostForm(new PostData("Autotest", "Body for autotest"));
-    app.getPostHelper().changePublish();
-    app.getPostHelper().submitPostCreation();
+    app.getPostHelper().createPost(new PostData("Autotest", "Body for autotest"));
     app.getNavigationHelper().gotoPostsPage();
     app.getNavigationHelper().gotoHomePage();
   }

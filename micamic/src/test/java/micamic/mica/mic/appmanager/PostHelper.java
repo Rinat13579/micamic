@@ -20,8 +20,7 @@ public class PostHelper extends HelperBase {
 
 
 
-    public void initPostCreation() throws InterruptedException {
-        Thread.sleep(250);
+    public void initPostCreation() {
         click(By.linkText("Создать запись"));
     }
 
@@ -45,5 +44,16 @@ public class PostHelper extends HelperBase {
     public void commentPost() {
         type(By.id("id_content"), "First autotest comment");
         click(By.xpath("//*[@id=\"comments\"]/div[1]/form/div/div[2]/button"));
+    }
+
+    public boolean isThereAPost() {
+        return isElementPresent(By.xpath("/html/body/main/div/div/div/div[2]/div/div/a[1]"));
+    }
+
+    public void createPost(PostData postData) {
+        initPostCreation();
+        fillPostForm(postData);
+        changePublish();
+        submitPostCreation();
     }
 }
